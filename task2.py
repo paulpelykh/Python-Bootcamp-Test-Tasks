@@ -15,13 +15,12 @@ def tiktok_to_gif(url: str):
             file.write(req.content)
 
         # convert to gif
-        videoClip = VideoFileClip("tiktok.mp4")
-        # videoClip = VideoFileClip(download_path)
+        videoClip = VideoFileClip(download_path)
 
         gif_path = "result/gif/tik_tok.gif"
 
         # for faster download set framrate to 15 fps
-        videoClip.write_gif(gif_path, fps=1)
+        videoClip.write_gif(gif_path, fps=15)
 
         result_path = os.path.abspath(gif_path)
         print(f"Converted tiktok at: {result_path}")
